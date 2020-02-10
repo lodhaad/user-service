@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.tradeai.users.data.UserRepository;
@@ -17,12 +18,18 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepository repository;
 	
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
+
+	
 
 	@Override
 	public UserDTO addUser(UserDTO userDTO) {
 		
 		ModelMapper mapper = new ModelMapper();
 		User user = mapper.map(userDTO, User.class);
+		
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 
 		User userFromDB = repository.save(user);
 		

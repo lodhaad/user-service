@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tradeai.users.dto.UserDTO;
+import com.tradeai.users.exception.UserServiceException;
 import com.tradeai.users.model.User;
 import com.tradeai.users.service.UserService;
 import com.tradeai.users.ui.model.request.UserRestRequest;
@@ -52,6 +53,8 @@ public class UserController {
 	public ResponseEntity<UserRestResponse> saveUser(@RequestBody UserRestRequest userDetails){
 		
 		if (!userDetails.getPassword().equals(userDetails.getReenteredPassword())) {
+			
+			throw new UserServiceException("Re-entered password is not the same");
 			
 		}
 		
