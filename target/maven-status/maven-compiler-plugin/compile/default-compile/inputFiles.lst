@@ -5,6 +5,7 @@ D:\trade-ai\securities_lending\services\user-service\src\main\java\com\tradeai\u
 D:\trade-ai\securities_lending\services\user-service\src\main\java\com\tradeai\users\controller\UserController.java
 D:\trade-ai\securities_lending\services\user-service\src\main\java\com\tradeai\users\data\UserRepository.java
 D:\trade-ai\securities_lending\services\user-service\src\main\java\com\tradeai\users\security\UserWebSecurity.java
+D:\trade-ai\securities_lending\services\user-service\src\main\java\com\tradeai\users\ui\model\request\UserRestUpdateRequest.java
 D:\trade-ai\securities_lending\services\user-service\src\main\java\com\tradeai\users\dto\UserDTO.java
 D:\trade-ai\securities_lending\services\user-service\src\main\java\com\tradeai\users\UsersApplication.java
 D:\trade-ai\securities_lending\services\user-service\src\main\java\com\tradeai\users\exception\AppExceptionHandler.java
